@@ -1,1 +1,60 @@
 
+ int lv=0,x=0,a=0;
+            double jy=0,jy2 = 1000,y=0;//等级
+             do
+             {
+                 a = Convert.ToInt32(Console.ReadLine());//获取
+                 switch (a)//获取来源
+                 {
+
+                     case 1:
+                         jy = jy + 5;
+                         break;
+                     case 2:
+                         jy = jy + 5;
+                         break;
+                     case 3:
+                         jy = jy + 10;
+                         break;
+                     case 4:
+                         jy = jy + 50;
+                         break;
+                     case 5:
+                         jy = jy + 500;
+                         break;
+                     case 6:
+                         jy = jy + 100;
+                         break;
+                 }
+                 if (jy2 <= jy)//经验上限==经验，经验溢出进行减法，加到下级经验
+                 {
+                     y = jy - jy2;
+                     jy2 = jy2 * 1.5;
+                     lv++;
+                    jy = y;
+                }
+                Console.WriteLine("lv={0}",lv);
+                Console.WriteLine("jy={0}",jy);
+                Console.WriteLine("jy2={0}",jy2);
+                Console.WriteLine("下一次");
+                x++;
+             } while (x<=99);//循环99上限（无）*/
+           int a=0, b=0, c=1000, x=0;//a等级b经验c溢出x计数
+            while(x<99)
+            {
+                if (a < 99)
+                    b += 505;
+                if (b > c)
+                {
+                    b -= c;
+                    c *= 2;
+                    a++;
+                }
+                x++;
+
+                
+            }
+            Console.WriteLine(a);
+                Console.WriteLine(b);
+                Console.WriteLine(c);
+             Console.ReadKey();
